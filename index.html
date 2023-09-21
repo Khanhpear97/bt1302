@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="fruit">Nhập từ </label><input type="text" id="fruit">
+<button onclick="sub()">Dịch</button>
+<p id="result"></p>
+<script>
+    let eng = ['apple', 'banana', 'orange', 'lemon'];
+    let vie = ['táo', 'chuối', 'cam', 'chanh'];
+    let result = '';
+    function sub() {
+        let prm = document.getElementById("fruit").value;
+        for (let i = 0; i < eng.length; i++) {
+            if (prm == eng[i]) {
+                result = vie[i];
+            } else if (prm == vie[i]) {
+                result = eng[i];
+            } else if (eng.indexOf(prm) == -1 && vie.indexOf(prm) == -1) {
+                result = 'Không tìm thấy kết quả';
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>
